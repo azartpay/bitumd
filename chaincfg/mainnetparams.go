@@ -25,8 +25,8 @@ var MainNetParams = Params{
 	GenesisHash:              &genesisHash,
 	PowLimit:                 mainPowLimit,
 	PowLimitBits:             0x1d00ffff,
-	ReduceMinDifficulty:      false,
-	MinDiffReductionTime:     0, // ~99.3% chance to be mined before reduction
+	ReduceMinDifficulty:      true,
+	MinDiffReductionTime:     time.Minute * 10, // ~99.3% chance to be mined before reduction
 	GenerateSupported:        true,
 	MaximumBlockSizes:        []int{393216},
 	MaxTxSize:                393216,
@@ -48,14 +48,14 @@ var MainNetParams = Params{
 
 	// Checkpoints ordered from oldest to newest.
 	Checkpoints: []Checkpoint{
-		{100, newHashFromStr("000000005b24df7dd3dcdfbb4a90e4001963360b4181f4975e9b94a3d94039a8")},
-		{500, newHashFromStr("000000001d5f634c9fda95180ccb472de9cbc7d25e3fea276b8b2706ea04a610")},
-		{1000, newHashFromStr("000000000037c4bba623aa717b50e530a5f9fd891df815e2791cd0a3a233b782")},
-		{2000, newHashFromStr("0000000000104f477a38499a5988c5ace7e155e9fb27554b955f3e22724736cc")},
-		{3000, newHashFromStr("00000000000207e68b97cf74585aec083d3118a524f50a177615622bf0bb2b9c")},
-		{4000, newHashFromStr("00000000001461c0cc9e88eca5a2e82029dddf240457d3a4b99725984a8362c2")},
-		{9000, newHashFromStr("000000000000af2d102346b800d7b9fb9c9cfa71677fd3bcd77eb7b03d20a290")},
-		{9583, newHashFromStr("000000000030279de3cc16ac237f264471d44e75c89efae4e9add41e9c50c0a5")},
+		//{100, newHashFromStr("000000005b24df7dd3dcdfbb4a90e4001963360b4181f4975e9b94a3d94039a8")},
+		//{500, newHashFromStr("000000001d5f634c9fda95180ccb472de9cbc7d25e3fea276b8b2706ea04a610")},
+		//{1000, newHashFromStr("000000000037c4bba623aa717b50e530a5f9fd891df815e2791cd0a3a233b782")},
+		//{2000, newHashFromStr("0000000000104f477a38499a5988c5ace7e155e9fb27554b955f3e22724736cc")},
+		//{3000, newHashFromStr("00000000000207e68b97cf74585aec083d3118a524f50a177615622bf0bb2b9c")},
+		//{4000, newHashFromStr("00000000001461c0cc9e88eca5a2e82029dddf240457d3a4b99725984a8362c2")},
+		//{9000, newHashFromStr("000000000000af2d102346b800d7b9fb9c9cfa71677fd3bcd77eb7b03d20a290")},
+		//{9583, newHashFromStr("000000000030279de3cc16ac237f264471d44e75c89efae4e9add41e9c50c0a5")},
 	},
 
 	// The miner confirmation window is defined as:
